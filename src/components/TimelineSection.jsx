@@ -1,0 +1,2 @@
+import React from 'react'; import Reveal from './Reveal'; import SectionHeader from './SectionHeader';
+export default function TimelineSection({ id, kicker, title, items }){return <section id={id}><div className="container"><SectionHeader kicker={kicker} title={title}/><div className="timeline">{items.map(item=><Reveal className="timeline-item" key={item.title}><div className="timeline-date">{item.date}</div><div><h3>{item.title}</h3><p>{item.text}</p></div></Reveal>)}</div></div></section>}

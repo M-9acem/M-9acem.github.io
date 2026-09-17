@@ -1,0 +1,2 @@
+import React from 'react'; import Reveal from './Reveal'; import { profile } from '../data/siteData';
+export default function Contact(){return <section id="contact"><div className="container"><Reveal className="cta"><div><div className="section-kicker">Let’s connect</div><h2>Research, AI, data — or a good idea worth building.</h2></div><div className="actions"><a className="btn primary" href={profile.email}>Email me ↗</a><a className="btn" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></div></Reveal></div></section>}

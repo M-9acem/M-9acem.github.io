@@ -1,0 +1,2 @@
+import React from 'react'; import Reveal from './Reveal'; import SectionHeader from './SectionHeader'; import { skills } from '../data/siteData';
+export default function Skills(){return <section><div className="container"><SectionHeader kicker="Stack" title="Tools I build with."/><Reveal><div className="skills">{skills.map(s=><span className="skill" key={s}>{s}</span>)}</div></Reveal></div></section>}
