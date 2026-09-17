@@ -17,7 +17,6 @@ export const stats = [
   ['PhD', 'Federated Learning & LLM Safety'],
   ['1', 'Publication — IEEE FLTA 2026'],
   ['Oracle', 'AI Engineer, 2025'],
-  ['18-run', 'Sweep on FL safety erosion'],
 ];
 
 export const experience = [
@@ -42,9 +41,9 @@ export const researchProjects = [
     tagline: 'Does LLM safety alignment degrade, spread and recover when LoRA adapters are averaged between peers with no central server?',
     date: '2026',
     points: [
-      'Studied the decentralized case the federated-safety literature leaves open — prior work assumes a central server. Built the harness from scratch (LoRA fine-tuning over simulated agent networks, adapter averaging in parameter and ΔW/SVD modes, dual-scored safety evaluation) and validated measurement before the network: untouched Qwen2.5-1.5B-Instruct held a 0.38% attack success rate across 3 seeds, then reproduced the centralized result — benign-only fine-tuning raises ASR to 20–45% in 200 steps.',
-      '18-run sweep across {ring, random, complete} topologies × {8, 16} agents × 3 seeds: erosion spread in every configuration (0.4% → 50–74% ASR), while graph density showed no effect — the spread between topologies (3.5pp) fell below seed noise (6.7pp), reported as a negative result.',
-      'Main result: peers holding refusal data partially repair the network, monotonically in their number (67.4% ASR with none → 24–31% with 4 of 16 peers), with ASR decaying by hop distance — but no configuration recovered to within 5pp of baseline: a mitigation, not a fix.',
+      'Studied the decentralized case the federated safety literature leaves open (prior work assumes a central server). Built the harness from scratch (LoRA fine-tuning over simulated agent networks, adapter averaging in parameter and ΔW/SVD modes, dual-scored safety evaluation) and validated measurement before the network: untouched Qwen2.5-1.5B-Instruct at 0.38% attack success rate across 3 seeds, then reproduced the centralized result — benign-only fine-tuning raises ASR to 20–45% in 200 steps.',
+      '18-run sweep ({ring, random, complete} × {8, 16} agents × 3 seeds): erosion spread in every configuration (0.4% → 50–74% ASR), while graph density showed no effect — between-topology spread (3.5pp) fell below seed noise (6.7pp), reported as a negative result.',
+      'Main result: peers holding refusal data partially repair the network, monotonically in their number (67.4% ASR with none → 24–31% with 4 of 16), with ASR decaying by hop distance — but no configuration recovered to within 5pp of baseline: mitigation, not a fix. Preliminary (single seed): peripheral placement beat well-connected, inverting the expected direction.',
     ],
     tech: 'PyTorch, HuggingFace PEFT/TRL, Qwen2.5 & Llama-3.2, NetworkX, Hydra, Weights & Biases, AdvBench',
   },
